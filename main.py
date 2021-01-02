@@ -17,14 +17,14 @@ def mailing(first_command, second_command):
     bot = telebot.TeleBot(TOKEN)
     for player_id, player_role in first_command.items():
         bot.send_message(player_id, f"Вы {player_role}")
-    #for player_id, player_role in second_command.items():
-    #    bot.send_message(player_id, f"Вы {player_role}")
+    for player_id, player_role in second_command.items():
+        bot.send_message(player_id, f"Вы {player_role}")
     
     bot.polling(none_stop = True, interval = 0)
 
 
 if __name__ == "__main__":
-    #mailing(data_preparation())
-    mailing({709595886:"мафия"}, {})
+    mailing(data_preparation())
+    
 
 
